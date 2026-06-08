@@ -10,17 +10,22 @@ This dataset contains online retail transactions including invoice numbers, Stoc
 
 ## Visualizations
 
-## Insights
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-ecommerce = pd.read_csv(r"C:\Users\HP-PC\Desktop\internship\E-commerce.csv", encoding="latin1")
-ecommerce.head()
-InvoiceNo	StockCode	Description	Quantity	InvoiceDate	UnitPrice	CustomerID	Country
-0	536365	85123A	WHITE HANGING HEART T-LIGHT HOLDER	6	12-01-10 08:26	2.55	17850.0	United Kingdom
-1	536365	71053	WHITE METAL LANTERN	6	12-01-10 08:26	3.39	17850.0	United Kingdom
-2	536365	84406B	CREAM CUPID HEARTS COAT HANGER	8	12-01-10 08:26	2.75	17850.0	United Kingdom
-3	536365	84029G	KNITTED UNION FLAG HOT WATER BOTTLE	6	12-01-10 08:26	3.39	17850.0	United Kingdom
-4	536365	84029E	RED WOOLLY HOTTIE WHITE HEART.	6	12-01-10 08:26	3.39	17850.0	United Kingdom
+# ONE-PAGE SUMMARY REPORT: GLOBAL E-COMMERCE EXPLORATORY ANALYSIS
+**Project Title:** End-to-End Data Engineering and Exploratory Data Analysis Pipeline (E-commerce)  
+**Analyst:** Esther Ayodele  
+**Date:** June 8, 2026  
 
+---
+
+### 1. Data Cleaning and Validation Challenges Encountered
+* **Systemic Pricing Noise and Artifact Correction:** Advanced statistical distribution modeling via box plots exposed significant pricing anomalies from structural adjustments, debt charges, and administrative system noise. These errors manifested as extreme negative data points plunging below -$11,000. These elements were isolated and filtered to lock in pure retail financial variables.
+* **Negative Transaction Volume Segmentation:** Flagged substantial tranches of negative vectors within the inventory quantity fields. These were algorithmically isolated as customer order cancellations and product returns (Invoice Series C), preventing the artificial deflation of gross customer product volume tracking.
+* **Schema Normalization and Parsing:** Safely parsed highly erratic, mixed-format date-time stamps into a unified temporal system and synchronized all alphanumeric string structures to consistent casing criteria for seamless query aggregation.
+
+---
+
+### 2. Key EDA Findings and Top Portfolio Insights
+* **Insight 1 (Explosive Q4 Holiday Sales Cycles):** Monthly financial gross margins reveal a highly predictable baseline hovering under $800,000 for the opening three quarters of the year. This baseline triggers into an explosive consumer buying curve starting in August, hitting a monumental all-time performance revenue ceiling of over $1,500,000 in November 2011, highlighting clear demand seasonality.
+* **Insight 2 (Extreme Regional Revenue Concentration):** Macro geographic spend modeling shows absolute commercial centralization within the domestic market space. The United Kingdom represents the undisputed commercial driver, accounting for roughly $9,000,000 in transaction performance, entirely isolating secondary international markets like the Netherlands and Eire which sit beneath the $500,000 milestone.
+* **Insight 3 (High-Velocity Operational Core Inventory):** Inventory transaction frequency is intensely anchored by accessible consumer home accent assets. The White Hanging Heart T-Light Holder commands the highest velocity index with over 2,300 independent orders, followed immediately by the Jumbo Bag Red Retrospot at over 2,000 orders, establishing these SKUs as high-priority operational targets for rapid fulfillment zoning.
+* **Insight 4 (Strategic Cleaning Impact Justification):** Advanced retail distribution profiling proved that leaving raw systemic anomalies unchecked would directly risk incorporating massive multi-thousand-dollar system accounting noise into corporate reports. Programmatic filtering was verified as mandatory to ensure metrics remain accurate and unpolluted.
